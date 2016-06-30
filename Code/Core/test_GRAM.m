@@ -19,9 +19,7 @@
 % to be set properly. Descriptions of the directories and the parameters can be found by typing
 % help GRAM, or by looking into the GRAM.m function.
 %      
-%          Copyright (c)
-%          
-%          Contact : sbia-software@uphs.upenn.edu
+%          Copyright 2011 Jihun Hamm and Donghye Ye
 %
 %          This software is distributed WITHOUT ANY WARRANTY; without even
 %          the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
