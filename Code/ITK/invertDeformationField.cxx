@@ -7,7 +7,7 @@
 *    File Description
 *        Compute the inverse deformation field
 *
-*    Copyright (c) 2009 by SBIA, Dept of Radiology, University of Pennsylvania
+*        Copyright 2011 Jihun Hamm and Donghye Ye
 *    
 *    This software is distributed WITHOUT ANY WARRANTY; without even
 *    the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
