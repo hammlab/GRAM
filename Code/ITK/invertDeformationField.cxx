@@ -1,19 +1,3 @@
-/*
-*    Date:    $Date: 2009-09-30 20:28:45 -0400 (Wed, 30 Sep 2009) $
-*    Version: $Revision: 243 $
-*    Author:  $Author: kanterae@UPHS.PENNHEALTH.PRV $ 
-*    ID:      $Id: invertDeformationField.cxx 243 2009-10-01 00:28:45Z kanterae@UPHS.PENNHEALTH.PRV $
-*
-*    File Description
-*        Compute the inverse deformation field
-*
-*        Copyright 2011 Jihun Hamm and Donghye Ye
-*    
-*    This software is distributed WITHOUT ANY WARRANTY; without even
-*    the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-*    PURPOSE.  See the above copyright notices for more information.
-*
-**/
 #include <iostream>
 #include <getopt.h>
 #include <sys/stat.h>
