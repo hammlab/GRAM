@@ -15,9 +15,7 @@
 %             gdist: geodesic distance
 %          
 %      
-%          Copyright (c)
-%          
-%          Contact : sbia-software@uphs.upenn.edu
+%          Copyright 2011 Jihun Hamm and Donghye Ye
 %
 %          This software is distributed WITHOUT ANY WARRANTY; without even
 %          the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
