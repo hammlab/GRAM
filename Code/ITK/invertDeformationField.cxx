@@ -10,8 +10,6 @@
 #include "itkCommand.h"
 #include "itkIterativeInverseDeformationFieldImageFilter.h"
 
-#include "sbiaBasicUtilities.h"
-
 #define INDENT "\t"
 #define EXEC_NAME "invertDeformationField"
 #define SVN_FILE_VERSION "$Id: $"
@@ -25,7 +23,6 @@
 #endif
 
 using namespace std;
-using namespace sbia;
 
 void echoVersion()
 {
@@ -138,6 +135,56 @@ runner(string dataFile, string movingImageFile, string outputBasename, unsigned 
   
 }
 
+int fileExists(const std::string fName)
+{
+  struct stat st;
+  if(stat(fName.c_str(),&st) == 0)
+    return 1; //fName is exists, May be a directory
+
+  return 0;
+}
+
+int splitFileName(std::string dataFile, std::string &baseName, std::string &extension, std::string &path)
+{
+  extension = "";
+  baseName = "";
+  path  = "";
+  std::string::size_type extPos = dataFile.rfind(".");
+  if ( extPos != std::string::npos )
+  {
+    extension  = dataFile.substr(extPos,dataFile.length() - extPos);
+    std::string tmp = dataFile.substr(0,extPos);
+    std::string::size_type pathPos = dataFile.rfind("/");
+    if ( pathPos != std::string::npos )
+    {
+      path  = tmp.substr(0,pathPos)+"/";
+      baseName = tmp.substr(pathPos,tmp.length()-pathPos);
+    }
+    else
+    {
+       path = "./";
+       baseName = tmp;
+    }
+    // Check if we have a .nii.gz extension
+    extPos = baseName.rfind(".");
+    if ( extPos != std::string::npos )
+    {
+      std::string extension2 = baseName.substr(extPos,baseName.length() - extPos);
+      if (extension2.compare(".nii") == 0)
+      {
+        extension = extension2 + extension;
+        baseName = baseName.substr(0,extPos);
+      }
+    }
+  }
+  else
+  {
+    std::cerr << "Can't find extension!!!!" << std::endl;  
+    return EXIT_FAILURE;
+  }
+  return EXIT_SUCCESS;
+}
+
 int main(int argc, char** argv)
 {
   string outputDir="";
@@ -229,7 +276,7 @@ int main(int argc, char** argv)
   std::string extension;
   std::string bName;
   std::string path;
-  sbia::splitFileName(dataFile,bName,extension,path);
+  splitFileName(dataFile,bName,extension,path);
   if (extension == ".img")
   {
     std::cerr << "Please supply a header as input, not an .img !" << std::endl;
@@ -250,7 +297,7 @@ int main(int argc, char** argv)
   default_ext = extension;
 
   //check for the existence of the input files.
-  if (! sbia::fileExists(dataFile))
+  if (! fileExists(dataFile))
   {
     std::cerr << dataFile << " Doesn't exist!!!\nExiting!\n\n" << std::endl;
     echoUsage();
