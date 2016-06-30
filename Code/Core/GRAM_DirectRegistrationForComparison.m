@@ -16,9 +16,7 @@
 %           Directsmoothing: regularization parameter for registration (default: 1.5)
 %          
 %      
-%          Copyright (c)
-%          
-%          Contact : sbia-software@uphs.upenn.edu
+%          Copyright 2011 Jihun Hamm and Donghye Ye
 %
 %          This software is distributed WITHOUT ANY WARRANTY; without even
 %          the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
