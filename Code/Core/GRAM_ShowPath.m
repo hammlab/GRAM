@@ -1,3 +1,21 @@
+%/*      
+%          File:    GRAM_ShowPath.m
+%          Date:    $Date: $
+%          Version: $Revision: $
+%          Author:  $Author: $
+%          ID:      $Id: $
+%      
+%          File Description
+%          GRAM_ShowPath(dirSubject,onepath)displays images from dirSubject on the
+%          given path (onepath).
+%          
+%          Copyright [2011] Jihun Hamm and Donghye Ye
+%  
+%          This software is distributed WITHOUT ANY WARRANTY; without even
+%          the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+%          PURPOSE.  See the above copyright notices for more information.
+%*/
+
 function GRAM_ShowPath(dirSubject,onepath)
 
 f = dir([dirSubject,'/*.nii']);
