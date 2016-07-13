@@ -1,7 +1,7 @@
 # GRAM (Geodesic Registration on Anatomical Manifolds)
 
 ### What is GRAM?
-GRAM  (Geodesic Registration on Anatomical Manifolds) is a framework for groupwise registration of medical images, described in the paper by Hamm, Ye, Verma, and Davatzikos, [MedIA 2010](docs/media10jh.pdf)
+GRAM  (Geodesic Registration on Anatomical Manifolds) is a framework for groupwise registration of medical images, described in the paper by Hamm, Ye, Verma, and Davatzikos, [MedIA 2010](Doc/media10jh.pdf)
 
 ### Why use GRAM?
 ####Challenges in medical image registration
@@ -101,19 +101,19 @@ Directsmoothing = '1.5';
 
 Type  test_GRAM to run the script. This will take less than an hour to finish. If you’re connected via SSH and is automatically disconnected sooner than an hour,  try launching Matlab in the background by typing matlab & before starting. No user input is required for test_GRAM.m. When the script has finished running without error, you will see the following four figures.
 GRAM Result: These are 60 images registered to a W-shaped template by GRAM method. 
-![alt text](/docs/image1.png)
+![alt text](/Doc/image1.png)
 
 
 Diffeomorphic Demon Result: These are 60 images registered to the same template using Demons method directly. Compare this figure with the figure above. 
 
-![alt text](/docs/image2.png)
+![alt text](/Doc/image2.png)
 
 ISOMAP: This figure shows 2-dimensional embedding of the data using ISOMAP algorithm. Red lines show nearest-neighbor relationships of the images. The template image is marked by a red box.
  
-![alt text](/docs/image3.png)
+![alt text](/Doc/image3.png)
 
 Geodesic Path in Anatomical Manifold: This shows an example of a registration path found by GRAM. The leftmost image (source) is registered to the rightmost image (target) sequentially via the path shown below. 
-![alt text](/docs/image4.png)
+![alt text](/Doc/image4.png)
  
 ##	References
 
