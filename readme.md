@@ -1,7 +1,8 @@
 # GRAM: Geodesic Registration on Anatomical Manifolds
 
 ### What is GRAM?
-GRAM  is a framework for groupwise registration of medical images, described in the paper by *Hamm, Ye, Verma, and Davatzikos*, [MedIA 2010](http://www.cse.ohio-state.edu/~hammj/papers/media10jh.pdf).
+GRAM  is a framework for groupwise registration of medical images described in the paper by [*Hamm, Ye, Verma, and Davatzikos, MedIA 2010*](http://www.cse.ohio-state.edu/~hammj/papers/media10jh.pdf). 
+This work has earned the 1st place in  MedIA-MICCAI Best Journal Paper Award, 2010.
 
 ### Why use GRAM?
 ####Challenges in medical image registration
