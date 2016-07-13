@@ -21,66 +21,52 @@ GRAM is not an algorithm to register two images. It is a framework for registeri
 2. MATLAB:  The package uses MATLAB scripts.  The package uses Matlab Graph Library (http://www.stanford.edu/~dgleich/programs/matlab_bgl) and NIFTI toolbox (http://www.rotman-baycrest.on.ca/~jimmy/NIfTI), which are freeware. These toolboxes are included in the package. The package was tested with MATLAB R2009B, but it will probably work with older versions as well. 
 3. CMake: CMake (http://www.cmake.org) is used create cross-platform makefiles.  
 4. Compiler and linker for Windows:  You can use the freeware version of Visual Studio (http://www.microsoft.com/express/). The package was test with Visual Studio 2008 Express.
+
 ####Operating Systems
 The package was tested on linux and Windows XP.
 
 ####Folder Structure
 1. Code
-  a.	Core: Core algorithms
-  b.	ITK: ITK library
-  c.	matlab_bgl: Matlab library for graph theoretic algorithms
-  d.	NIFTI: Matlab library for manipulating medical images in NIFTI formats
+  1.	Core: Core algorithms
+  2.	ITK: ITK library
+  3.	matlab_bgl: Matlab library for graph theoretic algorithms
+  4.	NIFTI: Matlab library for manipulating medical images in NIFTI formats
 2. Demo: 
-  a.	subject: example dataset of 2D brain patches
-  b.	result: intermediate and final registration results of the demo dataset will be saved here
+  1.	subject: example dataset of 2D brain patches
+  2.	result: intermediate and final registration results of the demo dataset will be saved here
 3. Doc: documents 
 
 ####Installation
 1.	Building ITK-dependent binaries  (linux)
-  a.	Install ITK with the `review` option on. Skip this step if ITK is already in the system.
-  b.	Go to `GRAMROOT/Code/ITK` , where `GRAMROOT` is the path for the package.
-  c.	Create ITK binary directory by `mkdir bin`
-  d.	Go to ITK binary directory by `cd bin` 
-  e.	Run `ccmake ..`. Configure, accept warnings, configure and generate makefiles.
-  f.	Build by `make`, this will generate following binaries in the bin folder.
-    ```
-    ConcatenateFields
-    WarpImage
-    JacobianField
-    DemonsRegistration_dong
-    DemonsRegistration_dong_n 
-    ```
+  1.	Install ITK with the `review` option on. Skip this step if ITK is already in the system.
+  2.	Go to `GRAMROOT/Code/ITK` , where `GRAMROOT` is the path for the package.
+  3.	Create ITK binary directory by `mkdir bin`
+  4.	Go to ITK binary directory by `cd bin` 
+  5.	Run `ccmake ..`. Configure, accept warnings, configure and generate makefiles.
+  6.	Build by `make`, this will generate following binaries in the bin folder. 
+    `ConcatenateFields`, `WarpImage`, `JacobianField`, `DemonsRegistration_dong`, `DemonsRegistration_dong_n`
   Please check that the binaries are built without errors. 
-  g.	Set environmental variables for your shell. If you use bash, type
-    `gedit $HOME/.bashrc`  and insert 
-    `PATH=$PATH:GRAMROOT/Code/ITK/bin` at the end. If you use csh, type
+  7.	Set environmental variables for your shell. If you use bash, type
+    `gedit $HOME/.bashrc` and insert `PATH=$PATH:GRAMROOT/Code/ITK/bin` at the end. If you use csh, type
     `gedit $HOME/.cshrc` and insert 
     `setenv PATH ${PATH}:GRAMROOT/Code/ITK/bin` at the end. 
     Save and exit.
-  h.	To apply this change in the shell, either type bash (or csh) or log-in again. To check the path is correctly included, type `DemonsRegistration_dong` in the shell. If you see a list of arguments and help texts, you are all set. If not, check the path again.
+  8.	To apply this change in the shell, either type bash (or csh) or log-in again. To check the path is correctly included, type `DemonsRegistration_dong` in the shell. If you see a list of arguments and help texts, you are all set. If not, check the path again.
 
 
 2.	Building ITK-dependent binaries  (MS Windows 32bit)
-  a.	Install ITK with the `review` option on. Skip this step if ITK is already in the system.
-  b.	Go to `GRAMROOT/Code/ITK`, where `GRAMROOT` is the path for the package.
-  c.	Create ITK binary directory by `mkdir bin`
-  d.	Launch `cmake-gui.exe` and set the source dir as `GRAMROOT/Code/ITK`  and set the bin dir as `GRAMROOT/Code/ITK/bin`
-  e.	Configure and generate solution files for Visual Studio. 
-  f.	Launch Visual Studio and build the solution in Release mode. This will generate following binaries.
-    ```
-    ConcatenateFields
-    WarpImage 
-    JacobianField
-    DemonsRegistration_dong
-    DemonsRegistration_dong_n
-    ```
-  Please check that the binaries are built without errors.
-  g.	Set environment variables: go to `My Computer->Properties->Advanced->Environment Variables-> User variables`.  Add  
-`GRAMROOT\Code\ITK\bin\Release` to the `PATH` variable.
-  h.	To check the path is correctly included, open command prompt and type `DemonsRegistration_dong`. If you see a list of arguments and help texts, you are all set. If not, check the path again.
+  1.	Install ITK with the `review` option on. Skip this step if ITK is already in the system.
+  2.	Go to `GRAMROOT/Code/ITK`, where `GRAMROOT` is the path for the package.
+  3.	Create ITK binary directory by `mkdir bin`
+  4.	Launch `cmake-gui.exe` and set the source dir as `GRAMROOT/Code/ITK`  and set the bin dir as `GRAMROOT/Code/ITK/bin`
+  5.	Configure and generate solution files for Visual Studio. 
+  6.	Launch Visual Studio and build the solution in Release mode. This will generate following binaries.
+    `ConcatenateFields`, `WarpImage`, `JacobianField`, `DemonsRegistration_dong`, `DemonsRegistration_dong_n`  Please check that the binaries are built without errors.
+  7.	Set environment variables: go to `My Computer->Properties->Advanced->Environment Variables-> User variables`.  Add `GRAMROOT\Code\ITK\bin\Release` to the `PATH` variable.
+  8.	To check the path is correctly included, open command prompt and type `DemonsRegistration_dong`. If you see a list of arguments and help texts, you are all set. If not, check the path again.
 
-3.	Including Matlab Libraries [OS-independent]
-Launch MATLAB and include the three folders in the Matlab path:
+3.	Including Matlab Libraries (OS-independent)  
+  Launch MATLAB and include the three folders in the Matlab path:
   ```
   GRAMROOT/Code/Core
   GRAMROOT/Code/matlab_bgl
@@ -126,7 +112,7 @@ Geodesic Path in Anatomical Manifold: This shows an example of a registration pa
  
 ##	References
 
-1.	The main function: `GRAM.m`
+1.	The main function: `GRAM.m`  
   a.	Below is the description of `GRAM.m` inside the code.
   ```
   % function [pdist,gpath,gmean,gdist,gMSE,gHE,dMSE,dHE]=GRAM
@@ -181,44 +167,44 @@ Geodesic Path in Anatomical Manifold: This shows an example of a registration pa
   %
   ```
   
- b.	The workflow of GRAM consists of the five steps:
-   i)	 GRAM_PairwiseDistance: Calculate distances (weighted sum of MSE and HE) between two images
-   ii)	GRAM_FindK: Find the minimum K which makes the k-nearest neighbor graph connected
-   iii)	GRAM_GeodesicPath: Find geodesic paths in Anatomical Manifolds
-   iv)	GRAM_GeodesicRegistration: Concatenate small diffeormophic fields along geodesic path
-   v)	GRAM_FineTuing: Fine-tune the resulting field
-   vi)	GRAM_DirectRegistrationForComparison:  Apply Demons directly for comparison
-   Please refer to the paper for details.
+  b.	The workflow of GRAM consists of the following steps:   
+    1.	`GRAM_PairwiseDistance: Calculate distances (weighted sum of MSE and HE) between two images
+    2.	`GRAM_FindK: Find the minimum K which makes the k-nearest neighbor graph connected
+    3.	`GRAM_GeodesicPath: Find geodesic paths in Anatomical Manifolds
+    4.	`GRAM_GeodesicRegistration: Concatenate small diffeormophic fields along geodesic path
+    5.	`GRAM_FineTuing: Fine-tune the resulting field
+    6.	`GRAM_DirectRegistrationForComparison:  Apply Demons directly for comparison
+    Please refer to the paper for details.
  
- c.	The following ITK binaries are used internally :
-   i)	ConcatenateFields – Concatenate deformation fields
-   ii)	WarpImage – Apply deformation field to a moving Image
-   iii)	JacobianField – Calculate the Jacobian determinant
-   iv)	DemonsRegistration_dong – Register images by Demons
-   v)	DemonsRegistration_dong_n – Register images by Demons with NN interpolation. 
+  c.	The following ITK binaries are used internally:  
+    1.	`ConcatenateFields` – Concatenate deformation fields
+    2.	`WarpImage` – Apply deformation field to a moving Image
+    3.	`JacobianField` – Calculate the Jacobian determinant
+    4.	`DemonsRegistration_dong` – Register images by Demons
+    5.	`DemonsRegistration_dong_n` – Register images by Demons with NN interpolation. 
 
-2. test function: `test_GRAM.m`
+2. test function: `test_GRAM.m`  
   a. Below is the description of `test_GRAM.m` inside the code.
-
-  ```
-  % This script is a demonstration of GRAM framework. It shows the usage of function  GRAM.m
-  % for groupwise registration of simulated 2D images resembling cortical patches. 
-  %
-  % To run this script with default parameters, change the directories to fit your downloaded folder.
-  % It is recommended that the path names do not include spaces.
-  % After changing the directories, run test_GRAM.m. The script runs in less than an hour on a PC
-  % without user actions. This will output four figures, whose description is
-  % in the text.
-  %
-  % To use GRAM.m for other image databases, the directories and the parameters need
-  % to be set properly. Descriptions of the directories and the parameters can be found by typing
-  % help GRAM, or by looking into the GRAM.m function.
-  ```
+  
+    ```
+    % This script is a demonstration of GRAM framework. It shows the usage of function  GRAM.m
+    % for groupwise registration of simulated 2D images resembling cortical patches. 
+    %
+    % To run this script with default parameters, change the directories to fit your downloaded folder.
+    % It is recommended that the path names do not include spaces.
+    % After changing the directories, run test_GRAM.m. The script runs in less than an hour on a PC
+    % without user actions. This will output four figures, whose description is
+    % in the text.
+    %
+    % To use GRAM.m for other image databases, the directories and the parameters need
+    % to be set properly. Descriptions of the directories and the parameters can be found by typing
+    % help GRAM, or by looking into the GRAM.m function.
+    ```
   
   b.	`test_GRAM.m` uses the following utility functions to visualize the results.
-    i)	GRAM_Montage: Display warped Images
-    ii)	GRAM_ISOMAP: Compute and display the ISOMAP embedding
-    iii)	GRAM_ShowPath: Display geodesic paths in the Anatomical Manifold
+    1.	`GRAM_Montage`: Display warped Images
+    2.	`GRAM_ISOMAP`: Compute and display the ISOMAP embedding
+    3.	`GRAM_ShowPath`: Display geodesic paths in the Anatomical Manifold
 
 
 ### Acknowledgements
