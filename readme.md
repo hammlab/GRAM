@@ -1,7 +1,7 @@
-# GRAM (Geodesic Registration on Anatomical Manifolds)
+# GRAM: Geodesic Registration on Anatomical Manifolds
 
 ### What is GRAM?
-GRAM  (Geodesic Registration on Anatomical Manifolds) is a framework for groupwise registration of medical images, described in the paper by *Hamm, Ye, Verma, and Davatzikos*, [MedIA 2010](http://www.cse.ohio-state.edu/~hammj/papers/media10jh.pdf).
+GRAM  is a framework for groupwise registration of medical images, described in the paper by *Hamm, Ye, Verma, and Davatzikos*, [MedIA 2010](http://www.cse.ohio-state.edu/~hammj/papers/media10jh.pdf).
 
 ### Why use GRAM?
 ####Challenges in medical image registration
@@ -208,7 +208,7 @@ Geodesic Path in Anatomical Manifold: This shows an example of a registration pa
 
 
 ### Acknowledgements
-* Jihun Hamm [homepage](https://web.cse.ohio-state.edu/~hammj/))
+* Jihun Hamm [homepage](https://web.cse.ohio-state.edu/~hammj/)
 * Donghye Ye [Purdue]
 
 
