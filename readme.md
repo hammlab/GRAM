@@ -208,7 +208,7 @@ Geodesic Path in Anatomical Manifold: This shows an example of a registration pa
 
 
 ### Acknowledgements
-* Jihun Hamm [homepage](https://web.cse.ohio-state.edu/~hammj/)
+* Jihun Hamm (OSU [homepage](https://web.cse.ohio-state.edu/~hammj/))
 * Donghye Ye [Purdue]
 
 
