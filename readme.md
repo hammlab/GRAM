@@ -169,12 +169,12 @@ Geodesic Path in Anatomical Manifold: This shows an example of a registration pa
   ```
   
   b.	The workflow of GRAM consists of the following steps:   
-    1.	`GRAM_PairwiseDistance: Calculate distances (weighted sum of MSE and HE) between two images
-    2.	`GRAM_FindK: Find the minimum K which makes the k-nearest neighbor graph connected
-    3.	`GRAM_GeodesicPath: Find geodesic paths in Anatomical Manifolds
-    4.	`GRAM_GeodesicRegistration: Concatenate small diffeormophic fields along geodesic path
-    5.	`GRAM_FineTuing: Fine-tune the resulting field
-    6.	`GRAM_DirectRegistrationForComparison:  Apply Demons directly for comparison
+    1.	`GRAM_PairwiseDistance`: Calculate distances (weighted sum of MSE and HE) between two images
+    2.	`GRAM_FindK`: Find the minimum K which makes the k-nearest neighbor graph connected
+    3.	`GRAM_GeodesicPath`: Find geodesic paths in Anatomical Manifolds
+    4.	`GRAM_GeodesicRegistration`: Concatenate small diffeormophic fields along geodesic path
+    5.	`GRAM_FineTuing`: Fine-tune the resulting field
+    6.	`GRAM_DirectRegistrationForComparison`:  Apply Demons directly for comparison
     Please refer to the paper for details.
  
   c.	The following ITK binaries are used internally:  
